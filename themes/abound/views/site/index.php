@@ -23,18 +23,8 @@ $baseUrl = Yii::app()->theme->baseUrl;
                         foreach ($listIdModels as $key => $value) {
                             $finalCollection[] = $value->list->list_id_value;
                         }
-                        $this->widget('zii.widgets.jui.CJuiAutoComplete',array(
-                            'name'=>'searchListId',
-                            'source'=>$finalCollection,
-                            // additional javascript options for the autocomplete plugin
-                            'options'=>array(
-                                'minLength'=>'2',
-                            ),
-                            'htmlOptions'=>array(
-                                'style'=>'height:20px;margin: 20px',
-                                'placeholder'=>'Listid selection',
-                            ),
-                        ));
+                        $finalCollection = array_combine($finalCollection, $finalCollection);
+                        echo CHtml::dropDownList('searchListId', 'something', $finalCollection, array('style'=>"margin: 20px",'prompt'=>"Search list"));
                     ?>
                 <?php echo CHtml::button('Submit', array('type'=>'submit','class'=>'btn btn-primary')); ?>
                 <?php echo CHtml::endForm(); ?>

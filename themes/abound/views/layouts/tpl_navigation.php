@@ -19,7 +19,7 @@
                     'encodeLabel'=>false,
                     'items'=>array(
                         array('label'=>'Home', 'url'=>array('/site/index')),
-                        array('label'=>'<i class="icon-user icon-white"></i> User', 'url'=>array('/ManageUser') ,'visible'=>Yii::app()->user->checkAccess("administrator")  ),
+                        array('label'=>'<i class="icon-user icon-white"></i> User', 'url'=>array('/manageUser') ,'visible'=>Yii::app()->user->checkAccess("administrator")  ),
        //                  array('label'=>'My Account <span class="caret"></span>', 'url'=>'#','itemOptions'=>array('class'=>'dropdown','tabindex'=>"-1"),'linkOptions'=>array('class'=>'dropdown-toggle','data-toggle'=>"dropdown"), 
        //                  'items'=>array(
        //                      array('label'=>'My Messages <span class="badge badge-warning pull-right">26</span>', 'url'=>'#'),

@@ -54,7 +54,7 @@ $this->breadcrumbs=array(
 				<tr>
 					<td>
 						<strong style='margin: 30px 20px;'><?php echo $value->list_id_value ?></strong>
-						<?php echo CHtml::link(CHtml::image(Yii::app()->theme->baseUrl.'/img/1452295485_cancel.png', 'Remove item', array('style'=>'height: 20px')  ), array('/assigned/removeAssignedList', 'user_id'=>$user_id,"assigned_list_id"=>$value->list_id_value), array('class'=>'pull-right')); ?>
+						<?php echo CHtml::link(CHtml::image(Yii::app()->theme->baseUrl.'/img/1452295485_cancel.png', 'Remove item', array('style'=>'height: 20px')  ), array('/assigned/removeAssignedList', 'user_id'=>$user_id,"assigned_list_id"=>$value->list_id_value), array('class'=>'pull-right','confirm'=>"Are you sure you want to remove this assignment?")); ?>
 				</tr>
 				<?php endforeach ?>
 			</tbody>

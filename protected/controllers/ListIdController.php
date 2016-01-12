@@ -27,8 +27,9 @@ class ListIdController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','create','update','index','view'),
+			array(
+			'allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('admin','delete','create','update','index','view','newListId'),
 				'roles'=>array('administrator'),
 			),
 			array('deny',  // deny all users
@@ -161,5 +162,17 @@ class ListIdController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	public function actionNewListId($listId)
+	{
+		$newListId = new ListId();
+		$newListId->list_id_label = $listId;
+		$newListId->list_id_value = $listId;
+		if ($newListId->save()) {
+			Yii::app()->user->setFlash("success","Success : List $listId is now available. ");
+		}else{
+			Yii::app()->user->setFlash("error",CHtml::errorSummary($newListId));
+		}
+		$this->redirect(Yii::app()->request->getUrlReferrer());
 	}
 }

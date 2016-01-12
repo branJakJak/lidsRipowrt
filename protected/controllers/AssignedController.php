@@ -67,7 +67,10 @@ class AssignedController extends Controller
 		$currentUserModel = User::model()->findByAttributes(array('id'=>$user_id));
 
 		if (!$listIdModel) {
-			throw new CHttpException(404,"We can't find this $new_list_id in the database. ");
+			$addNewListIdLink = CHtml::link('Yes', array('/listId/newListId','listId'=>$new_list_id),array('class'=>"btn btn-primary"));
+			Yii::app()->user->setFlash("info","Sorry we can't find this <strong>$new_list_id</strong> in the database. Would you like to add it in the database ? ".$addNewListIdLink);
+			//return to referrer url
+			$this->redirect(Yii::app()->request->getUrlReferrer());
 		}
 		$criteria = new CDbCriteria;
 		$criteria->compare('list_id', $listIdModel->id);
