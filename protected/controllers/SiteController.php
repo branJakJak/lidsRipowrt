@@ -61,6 +61,7 @@ class SiteController extends Controller
 	public function actionIndex()
 	{
 		$gridDataProvider = new CArrayDataProvider(array(),array( 'keyField' => 'id' ,'id'=>"id"));
+		$gridDataProvider->pagination = false;
 		$chartDataProvider = array();
 		$totalRevenue = number_format(0, 2);
 
