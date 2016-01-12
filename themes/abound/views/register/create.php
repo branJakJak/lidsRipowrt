@@ -24,7 +24,7 @@ $this->menu=array(
 </style>
 
 <div class="row-fluid">
-	<div class="offset2">
+	<div class="offset2 span8">
 		<h1><?php echo UserModule::t("Add User"); ?></h1>
 		<?php
 			echo $this->renderPartial('_form', array('model'=>$model,'profile'=>$profile));

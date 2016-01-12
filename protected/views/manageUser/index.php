@@ -16,7 +16,7 @@ $this->breadcrumbs=array(
 </style>
 
 <div class="row-fluid">
-	<div class="offset2 span6">
+	<div class="offset2 span8">
 		<?php 
 		$this->widget('bootstrap.widgets.TbAlert', array(
 		    'block'=>true, // display a larger alert block?

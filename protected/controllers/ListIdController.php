@@ -126,6 +126,7 @@ class ListIdController extends Controller
 	 */
 	public function actionAdmin()
 	{
+		$this->layout= "column1";
 		$model=new ListId('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['ListId']))

@@ -2,7 +2,7 @@
 <?php $this->beginContent('//layouts/main'); ?>
 <div id="content">
 	<div class="row-fluid">
-		<div class="offset1">
+		<div class="offset2 span8">
 		<?php if(isset($this->breadcrumbs)):?>
 			<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 	            'links'=>$this->breadcrumbs,

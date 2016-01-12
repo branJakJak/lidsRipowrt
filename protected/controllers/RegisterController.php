@@ -24,7 +24,7 @@ class RegisterController extends Controller
 	{
 		return array(
 			array('allow',
-				'actions'=>array('index','view'),
+				'actions'=>array('index'),
 				'roles'=>array('administrator'),
 			),
 			array('deny',  // deny all users
