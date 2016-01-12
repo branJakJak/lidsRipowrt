@@ -3,6 +3,7 @@
 
 $this->pageTitle=Yii::app()->name;
 $baseUrl = Yii::app()->theme->baseUrl; 
+$gridDataProvider->pagination = false;
 ?>
 
 <div class="row-fluid">
