@@ -86,11 +86,11 @@ class AssignedController extends Controller
 	{
 		$listIdMdl = ListId::model()->findByAttributes(array('list_id_value'=>$assigned_list_id));
 		if (!$listIdMdl) {
-			throw new CHttpException(404,"We can't this $assigned_list_id in the database. Either the record has been deleted or the record doesn't exists at all.");
+			throw new CHttpException(404,"We can't find this $assigned_list_id in the database. ");
 		}
 		$assignedListIdMode = AssignedAllowedListId::model()->findByAttributes(array('user_id'=>$user_id , "list_id"=>$listIdMdl->id));
 		if (!$assignedListIdMode) {
-			throw new CHttpException(404,"We can't this record in the database. Either the record has been deleted or the record doesn't at all. ");
+			throw new CHttpException(404,"We can't find this record in the database. ");
 		}else{
 			$assignedListIdMode->delete();
 			$currentUserModel = User::model()->findByAttributes(array('id'=>$user_id));
