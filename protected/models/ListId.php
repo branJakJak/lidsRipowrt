@@ -97,4 +97,25 @@ class ListId extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	/**
+	 * Returns list of unassigned listid
+	 * @param  integer $user_id The ID of user
+	 * @return array          The unassigned listid
+	 */
+	public static function getUnassignedListId($user_id)
+	{
+		/*get all list id of current user */
+		$assignedListId = AssignedAllowedListId::getAllAssignedList($user_id);
+		$excludedCollection = [];
+		foreach ($assignedListId as $key => $value) {
+			/*compose list id to be exluded*/
+			$excludedCollection[] = $value->list->list_id_value;
+		}
+		$criteria = new CDbCriteria;
+		/*get all records not in excluded collection */
+		$criteria->addNotInCondition("list_id_value",$excludedCollection);
+		$unassignedListId =  ListId::model()->findAll($criteria);
+		return $unassignedListId;/*return collection*/
+	}
+
 }
