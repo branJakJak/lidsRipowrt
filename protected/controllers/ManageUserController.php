@@ -21,7 +21,7 @@ class ManageUserController extends Controller
     {
         return array(
             array('allow',
-                'actions' => array('index', 'view'),
+                'actions' => array('index'),
                 'roles' => array('administrator'),
             ),
             array('deny', // deny all users
@@ -36,7 +36,12 @@ class ManageUserController extends Controller
     public function actionIndex()
     {
         $usermodel = new User();
+        $usermodel->superuser = 0;
+        $criteria = new CDbCriteria;
         $dataProvider = new CActiveDataProvider('User', array(
+            'criteria'=>array(
+                'condition'=>'superuser=0',
+            ),
             'pagination' => array(
                 'pageSize' => Yii::app()->getModule("user")->user_page_size,
             ),

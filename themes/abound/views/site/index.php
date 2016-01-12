@@ -82,7 +82,7 @@ $baseUrl = Yii::app()->theme->baseUrl;
 
         <?php
         $this->beginWidget('zii.widgets.CPortlet', array(
-            'title'=>'<span class="icon-th-list"></span> Visitors Chart',
+            'title'=>'<span class="icon-th-list"></span> Leads Report Chart',
             'titleCssClass'=>''
         ));
         ?>

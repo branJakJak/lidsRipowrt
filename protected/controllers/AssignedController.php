@@ -21,7 +21,7 @@ class AssignedController extends Controller
 	{
 		return array(
 			array('allow',
-				'actions'=>array('index','view'),
+				'actions'=>array('view'),
 				'roles'=>array('administrator'),
 			),
 			array('deny',  // deny all users
@@ -32,10 +32,11 @@ class AssignedController extends Controller
 	public function actionView($username)
 	{
 		/*find the user with username provided*/
-		$userModel = User::model()->findByAttributes(array('username'=>$username));
+		$userModel = User::model()->findByAttributes(array('username'=>$username,'superuser'=>0));
 		if (!$userModel) {
 			throw new CHttpException(404,"Sorry Username $username doesn't exists in the database");
 		}
+		$assignedListIdCollection = AssignedAllowedListId::getAllAssignedList(Yii::app()->user->id);
 
 		//using user id find the assigned
 		$this->render(
@@ -44,6 +45,10 @@ class AssignedController extends Controller
 				"model"=>$userModel,
 			)
 		);
+	}
+	public function actionRemoveAssignedList($username,$assignedListId)
+	{
+		
 	}
 
 }

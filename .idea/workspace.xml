@@ -99,7 +99,7 @@
       <file leaf-file-name="main.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/protected/config/main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="42" selection-start="4227" selection-end="4227" vertical-scroll-proportion="0.762">
+            <state line="92" column="29" selection-start="3522" selection-end="3522" vertical-scroll-proportion="0.218">
               <folding>
                 <element signature="e#7#56#0" expanded="true" />
               </folding>
@@ -149,6 +149,7 @@
       </list>
     </option>
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="72" />
     <option name="width" value="1288" />
@@ -273,6 +274,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeJavaFiles" value="false" />
   </component>
   <component name="PublishConfig">
@@ -498,7 +500,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/config/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="42" selection-start="4227" selection-end="4227" vertical-scroll-proportion="0.762">
+        <state line="92" column="29" selection-start="3522" selection-end="3522" vertical-scroll-proportion="0.218">
           <folding>
             <element signature="e#7#56#0" expanded="true" />
           </folding>

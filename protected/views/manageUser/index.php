@@ -9,6 +9,10 @@ $this->breadcrumbs=array(
 	#yw0 > div.summary {
 		padding: 20px;
 	}
+	#yw1_c0{
+	    padding: 16px;
+    	font-size: 24px !important;
+	}
 </style>
 
 <div class="row-fluid">
@@ -29,7 +33,7 @@ $this->breadcrumbs=array(
 			<?php echo UserModule::t(" User Manager"); ?>
 		</h1>
 		<?php echo CHtml::link('<i class="icon-plus icon-white"></i> Add User', array('/register'), array('class'=>'btn btn-primary')); ?>
-		<br>
+		<hr>
 		<br>
         <?php 
             $this->widget('zii.widgets.grid.CGridView', array(
@@ -42,15 +46,18 @@ $this->breadcrumbs=array(
 							'header' => 'Username',
 							'name' => 'username',
 							'type'=>'raw',
-							'value' => '$data->username',
+							'value' => 'CHtml::link(CHtml::tag("h6", array("style"=>"padding:10px"), $data->username.CHtml::image(Yii::app()->theme->baseUrl.\'/img/1452295888_icon-ios7-arrow-forward.png\', \'View assigned list\', array("style"=>"height: 27px;float:right"))),array("/assigned/view","username"=>$data->username),array("class"=>""))',
 						),
-						array(
-							'header' => 'View Assigned List',
-							'type'=>'raw',
-							'value' => 'CHtml::link("<i class=\'icon-search\'></i>",array("/assigned/view","username"=>$data->username),array("class"=>"btn btn-default"))',
-						),
+						// Yii::app()->theme->baseUrl.'/img/1452295888_icon-ios7-arrow-forward.png';
+						// CHtml::image(Yii::app()->theme->baseUrl.'/img/1452295888_icon-ios7-arrow-forward.png', 'View assigned list', array());
+						// array(
+						// 	'header' => 'View Assigned List',
+						// 	'type'=>'raw',
+						// 	'value' => 'CHtml::link("<i class=\'icon-search\'></i>",array("/assigned/view","username"=>$data->username),array("class"=>""))',
+						// ),
 					),
                 )); 
+
         ?>
 
 	</div>
