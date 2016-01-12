@@ -23,7 +23,7 @@ class SiteController extends Controller
 			array(
 				'allow',
 				'actions'=>array('error','login','logout'),
-				'users'=>array('*'),
+				'users'=>array('?'),
 			),
 			array(
 				'allow',
