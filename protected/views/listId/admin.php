@@ -3,8 +3,8 @@
 /* @var $model ListId */
 
 $this->breadcrumbs=array(
-	'List Ids'=>array('index'),
-	'Manage',
+	// 'List Ids'=>array('index'),
+	'Manage List',
 );
 
 $this->menu=array(

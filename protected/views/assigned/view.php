@@ -2,8 +2,7 @@
 /* @var $this AssignedController */
 
 $this->breadcrumbs=array(
-	'Assigned'=>array('/assigned'),
-	'View',
+	'Allowed list',
 );
 ?>
 
