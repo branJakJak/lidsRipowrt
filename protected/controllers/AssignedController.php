@@ -67,7 +67,7 @@ class AssignedController extends Controller
 		$currentUserModel = User::model()->findByAttributes(array('id'=>$user_id));
 
 		if (!$listIdModel) {
-			throw new CHttpException(404,"We can't this $new_list_id in the database. ");
+			throw new CHttpException(404,"We can't find this $new_list_id in the database. ");
 		}
 		$criteria = new CDbCriteria;
 		$criteria->compare('list_id', $listIdModel->id);
