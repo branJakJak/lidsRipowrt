@@ -99,6 +99,7 @@ class SiteController extends Controller
             }
             //re initialize value
             $gridDataProvider = new CArrayDataProvider($leadRows,array( 'keyField' => 'id' ,'id'=>"id"));
+            $gridDataProvider->pagination = false;
         }
         $gridDataProvider->pagination = null;
 		$this->render('index',compact('gridDataProvider','chartDataProvider','totalRevenue'));
