@@ -48,6 +48,13 @@ $this->breadcrumbs=array(
 							'type'=>'raw',
 							'value' => 'CHtml::link(CHtml::tag("h6", array("style"=>"padding:10px"), $data->username.CHtml::image(Yii::app()->theme->baseUrl.\'/img/1452295888_icon-ios7-arrow-forward.png\', \'View assigned list\', array("style"=>"height: 27px;float:right"))),array("/assigned/view","username"=>$data->username),array("class"=>""))',
 						),
+						array(
+							'header' => 'Reset',
+							'type'=>'raw',
+							'value' => 'CHtml::link(CHtml::tag("h6", array("style"=>"padding:10px"), CHtml::image(Yii::app()->theme->baseUrl.\'/img/reset-counter.png\', \'Clear list\', array("style"=>"height: 27px;float:left"))),array("/resetRevenue/index","username"=>$data->username),array("confirm"=>"Are you sure you want to reset the revenue value?"))',
+							'htmlOptions' => array('style' => 'width: 100px;'),
+							'visible'=>!Yii::app()->user->checkAccess("client")
+						),
 						// Yii::app()->theme->baseUrl.'/img/1452295888_icon-ios7-arrow-forward.png';
 						// CHtml::image(Yii::app()->theme->baseUrl.'/img/1452295888_icon-ios7-arrow-forward.png', 'View assigned list', array());
 						// array(

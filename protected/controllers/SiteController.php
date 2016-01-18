@@ -83,7 +83,19 @@ class SiteController extends Controller
             $fetcher = new LeadDataFetcher();
 
             $leadDataCollection = $fetcher->getDataFromDialer($_GET['searchListId']);
-            $totalRevenue = sprintf("%2.2f",  $fetcher->getTotalRevenue($_GET['searchListId'])  );
+            $startingDate =  null;
+            /*get starting date log using user_id*/
+            $criteria = new CDbCriteria;
+            $criteria->compare("user_id",Yii::app()->user->id);
+            $criteria->order = "id DESC";
+            $startingDateMdl = StartingDateRevenueLog::model()->find($criteria);
+        	/* if cant find any use date starting from 10 years ago*/
+        	if (!$startingDateMdl) {
+        		$startingDate = "2000-01-01";
+        	}else{
+				$startingDate = date("Y-m-d",strtotime($startingDateMdl->revert_date));
+        	}
+            $totalRevenue = sprintf("%2.2f",  $fetcher->getTotalRevenue($_GET['searchListId'] , $startingDate) );
             $leadRows = array();
             foreach ($leadDataCollection as $key => $value) {
                 /* @var $value LeadData*/

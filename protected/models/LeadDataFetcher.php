@@ -33,23 +33,30 @@ class LeadDataFetcher
     }
 
     /**
+     * // https://roadtoriches.co.uk/rr_list_total_v2.php?list_id=555&starting_date=2016-01-16
      * @param $list_id
      * @return float
      */
-    public function getTotalRevenue($list_id){
-        $curlURL = "https://roadtoriches.co.uk/rr_list_total.php?";
+    public function getTotalRevenue($list_id , $starting_date){
+        /*make sure its in Y-m-d*/
+        $startingDateObj = strtotime($starting_date);
+        if (date("Y-m-d",$startingDateObj) != $starting_date) {
+            throw new Exception("Make sure starting_date is in Y-m-d format");
+        }
+        $curlURL = "https://roadtoriches.co.uk/rr_list_total_v2.php?";
         $httpParam = array(
-            "ADD" => "2356",
-            "listid" => $list_id,
+            "list_id" => $list_id,
+            "starting_date" => date("Y-m-d",$startingDateObj)
         );
         $curlURL .= http_build_query($httpParam);
         $curlres = curl_init($curlURL);
         curl_setopt($curlres, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curlres, CURLOPT_SSL_VERIFYHOST, false);
         curl_setopt($curlres, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($curlres, CURLOPT_USERPWD, "client:BCK7VWfvkrYCa0Ks");
         $curlResRaw = curl_exec($curlres);
         $resultArr = json_decode($curlResRaw, true);
-        return $resultArr[0][0];
+        return $resultArr['total'];
     }
 
 
