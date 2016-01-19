@@ -8,3 +8,4 @@ protected/tests/
 protected/config/
 *.dev
 *.prod
+/nbproject/private/
