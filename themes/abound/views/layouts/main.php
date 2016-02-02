@@ -64,7 +64,7 @@
 </section>
 
 <!-- Require the footer -->
-<?php require_once('tpl_footer.php') ?>
+<?php //require_once('tpl_footer.php') ?>
 
 
   
