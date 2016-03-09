@@ -12,7 +12,7 @@ class LeadDataFetcher
     public function getDataFromDialer($list_id)
     {
         $leadCollection = [];
-        $curlURL = "http://dial.roadtoriches.co.uk/vicidial/getlist.php?";
+        $curlURL = "149.202.73.207/vicidial/getlist.php?";
         $httpParam = array(
             "ADD" => "2356",
             "listid" => $list_id,
