@@ -47,7 +47,7 @@ class LeadDataFetcher
         $httpParam = array(
             "list_id" => $list_id,
             "starting_date" => date("Y-m-d",$startingDateObj)
-        );
+        );  
         $curlURL .= http_build_query($httpParam);
         $curlres = curl_init($curlURL);
         curl_setopt($curlres, CURLOPT_RETURNTRANSFER, true);
