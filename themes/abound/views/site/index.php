@@ -47,6 +47,24 @@ $gridDataProvider->pagination = false;
 
 <div class="row-fluid">
     <div class="offset1 span3">
+      <?php
+          $this->beginWidget('zii.widgets.CPortlet', array(
+              'title'=>'IP Address',
+          ));
+      ?>
+        <h1>
+            <?php 
+                echo Yii::app()->request->userHostAddress
+            ?>
+            <small>Your Public IP Address</small>
+        </h1>      
+      
+      portlet content
+      
+      
+      <?php
+          $this->endWidget();
+      ?>
 
       <?php
         $this->beginWidget('zii.widgets.CPortlet', array(
