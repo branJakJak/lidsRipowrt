@@ -56,6 +56,7 @@ $gridDataProvider->pagination = false;
             <?php 
                 echo Yii::app()->request->userHostAddress
             ?>
+            <br>
             <small>Your Public IP Address</small>
         </h2>      
       <?php
