@@ -52,12 +52,12 @@ $gridDataProvider->pagination = false;
               'title'=>'IP Address',
           ));
       ?>
-        <h3>
+        <h2>
             <?php 
                 echo Yii::app()->request->userHostAddress
             ?>
             <small>Your Public IP Address</small>
-        </h3>      
+        </h2>      
       <?php
           $this->endWidget();
       ?>
