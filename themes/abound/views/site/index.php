@@ -52,7 +52,7 @@ $gridDataProvider->pagination = false;
               'title'=>'IP Address',
           ));
       ?>
-        <h2>
+        <h2 style="text-align:center">
             <?php 
                 echo Yii::app()->request->userHostAddress
             ?>
