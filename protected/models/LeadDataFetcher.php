@@ -12,7 +12,8 @@ class LeadDataFetcher
     public function getDataFromDialer($list_id)
     {
         $leadCollection = [];
-        $curlURL = "149.202.73.207/vicidial/getlist.php?";
+        $serverIpAddress = Yii::app()->params['VICI_SERVER_IP'];
+        $curlURL = $serverIpAddress."/vicidial/getlist.php?";
         $httpParam = array(
             "ADD" => "2356",
             "listid" => $list_id,
