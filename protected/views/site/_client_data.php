@@ -1,4 +1,4 @@
 <?php 
 
 ?>
-<?php echo $var ?>
+<?php echo $data ?>

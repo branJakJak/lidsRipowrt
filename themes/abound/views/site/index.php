@@ -89,7 +89,7 @@ $gridDataProvider->pagination = false;
             ));
         ?>
         <?php 
-            echo $this->renderPartial("_client_data",compact("cc001"),true);
+            echo $this->renderPartial("_client_data",array("data"=>$cc001),true);
         ?>        
         <?php
             $this->endWidget();
@@ -100,7 +100,7 @@ $gridDataProvider->pagination = false;
             ));
         ?>
         <?php 
-            echo $this->renderPartial("_client_data",compact("cc002"),true);
+            echo $this->renderPartial("_client_data",array("data"=>$cc002),true);
         ?>        
         <?php
             $this->endWidget();
