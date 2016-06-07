@@ -64,7 +64,8 @@ class SiteController extends Controller
 		$gridDataProvider->pagination = false;
 		$chartDataProvider = array();
 		$totalRevenue = number_format(0, 2);
-
+		$cc001 = LiveRevD::getValue("cc001");
+		$cc002 = LiveRevD::getValue("cc002");
 
         if (isset($_GET['searchListId'])) {
             /*check if user is allow to check this listid */
@@ -114,14 +115,8 @@ class SiteController extends Controller
             $gridDataProvider->pagination = false;
         }
         $gridDataProvider->pagination = false;
-		$this->render('index',compact('gridDataProvider','chartDataProvider','totalRevenue'));
+		$this->render('index',compact('gridDataProvider','chartDataProvider','totalRevenue','cc001','cc002'));
 	}
-
-	public function actionTest()
-	{
-		$this->render('test');
-	}
-
 	/**
 	 * This is the action to handle external exceptions.
 	 */

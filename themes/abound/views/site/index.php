@@ -81,8 +81,31 @@ $gridDataProvider->pagination = false;
                     ),
                 )); 
         ?>
-
         <?php $this->endWidget(); ?>
+
+        <?php
+            $this->beginWidget('zii.widgets.CPortlet', array(
+                'title'=>'CC001',
+            ));
+        ?>
+        <?php 
+            echo $this->renderPartial("_client_data",compact("cc001"),true);
+        ?>        
+        <?php
+            $this->endWidget();
+        ?>
+        <?php
+            $this->beginWidget('zii.widgets.CPortlet', array(
+                'title'=>'CC002',
+            ));
+        ?>
+        <?php 
+            echo $this->renderPartial("_client_data",compact("cc002"),true);
+        ?>        
+        <?php
+            $this->endWidget();
+        ?>
+
     </div>
     <div class="span7">
 

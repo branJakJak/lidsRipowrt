@@ -10,3 +10,4 @@ protected/config/
 *.dev
 *.prod
 /nbproject/private/
+.phpintel/
