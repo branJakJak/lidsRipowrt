@@ -1,4 +1,5 @@
 <?php 
 
 ?>
-<?php echo $data ?>
+
+<h1><?php echo $data ?></h1>
